@@ -58,6 +58,4 @@ int Time::AddTime(int nTime)
     // TODO: 여기에 구현 코드 추가.
     
     return    minutes + nTime;
-;
-    ;
 }

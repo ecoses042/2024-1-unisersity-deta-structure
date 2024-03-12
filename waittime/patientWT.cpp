@@ -10,9 +10,10 @@ int main()
 {
     int numberOfVisits(0), totalWaitingTime(0);
     char answer;
+    bool errorFlag;
     while (answer != 'y') 
     {
-        bool errorFlag; // arrival, seenByDoctor are instances of Time class
+         // arrival, seenByDoctor are instances of Time class
         Time arrival, seenByDoctor;
 
         cout << "Enter arrival time:";
@@ -35,23 +36,20 @@ int main()
         totalWaitingTime += seenByDoctor.subtractTimes(arrival);
         cout << "Done? Enter 'y' to quit, anything else to continue: ";
         cin >> answer;
-    } 
-    cout << "Number of visits: " << numberOfVisits << "\n";
-    cout << "Total waiting time: " << totalWaitingTime << " minutes.\n";
-    cout << "Average wait is " << totalWaitingTime / numberOfVisits
-        << " minutes.\n";
-
+    }
+    Time arrival_new;
     int nAvgTime = totalWaitingTime / numberOfVisits;
 
-    Time arrival_new;
-    bool errorFlag;
-
+    cout << "Number of visits: " << numberOfVisits << "\n";
+    cout << "Total waiting time: " << totalWaitingTime << " minutes.\n";
+    cout << "Average wait is " << nAvgTime << " minutes.\n";
     cout << "Enter arrival time:";
     arrival_new.readTime(errorFlag);
+    
     int expected_time = arrival_new.AddTime(nAvgTime);
-    cout << expected_time << endl;
-    return 0;
+    cout << "your expected time is:" << expected_time << endl;
 
+    return 0;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
