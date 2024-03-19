@@ -22,7 +22,7 @@ int main()
 
 void select_next(int array[], int size)
 {
-    if (size - 1 < 0)
+    if (size == 1)
         return ;
     int min_index = size;
     int min  = array[size];
