@@ -45,10 +45,10 @@ int main()
     cout << "Average wait is " << nAvgTime << " minutes.\n";
     cout << "Enter arrival time:";
     arrival_new.readTime(errorFlag);
-    
+
     int expected_time = arrival_new.AddTime(nAvgTime);
     cout << "your expected time is:" << expected_time << endl;
-
+    
     return 0;
 }
 

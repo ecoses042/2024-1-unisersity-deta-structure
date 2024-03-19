@@ -12,7 +12,8 @@ int main()
     array = new int[n];
     for (int i = 0; i < n; i++)
         cin >> array[i];
-    select_next(array, n);
+    select_next(array, n - 1);
+    cout << "array after sorting: ";
     for (int i = 0; i < n; i++)
         cout << array[i] << " ";
     delete [] array;
@@ -21,17 +22,20 @@ int main()
 
 void select_next(int array[], int size)
 {
-    for (int i = 0; i < size - 1; i++)
+    if (size - 1 < 0)
+        return ;
+    int min_index = size;
+    int min  = array[size];
+    for (int i = 0; i < size; i++)
     {
-        int min = i;
-        for (int j = i + 1; j < size; j++)
+        if (array[i] < min)
         {
-            if (array[i] > array[j])
-            {
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
+            min_index = i;
+            min = array[i];
         }
     }
+    int temp = array[size];
+    array[size] = min;
+    array[min_index] = temp;
+    select_next(array, size - 1);
 }
