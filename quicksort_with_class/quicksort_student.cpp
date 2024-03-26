@@ -6,7 +6,7 @@ using namespace std;
 class cstudent{
     private:
         int m_nId;
-        string Namm_strName;
+        string m_strName;
     public:
         int get_Id();
         string get_Name();
@@ -14,6 +14,8 @@ class cstudent{
         cstudent(int nId, string strName);
         void set_Name(string strName);
         void set_Id(int nId);
+        friend bool operator == (const cstudent& first, const cstudent& second);
+        
 };
 
 int main()
