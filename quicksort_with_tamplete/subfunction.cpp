@@ -20,7 +20,3 @@ void cstudent::set_Id(int nId)
     m_nId = nId;
 }
 
-bool operator ==(cstudent& first, cstudent& second)
-{
-    return (first.get_Id() == second.get_Id());
-}

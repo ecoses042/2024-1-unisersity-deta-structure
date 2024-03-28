@@ -12,20 +12,13 @@ class cstudent{
         string m_strName;
     public:
         int get_Id();
-        string get_Name();
-        cstudent(int m_nId, string m_strName);
+        string get_Name(); 
+        cstudent(int ID = 0, string Name = "") : m_nId(ID), m_strName(Name) {}
         void set_Name(string strName);
         void set_Id(int nId);
-        friend bool operator == (const cstudent& first, const cstudent& second);
-        
+        friend bool operator <=(const cstudent& first, const cstudent& second);
 };
 
-template <class T>
-void quick_sort(T a[], int first, int last);
-template <class T>
-int partition(T a[],int lastsmall, int last);
-template <class T>
-void print_array(T a[], int size);
 
 
 #endif
