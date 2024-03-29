@@ -4,16 +4,22 @@ using namespace std;
 
 int main()
 {
-    int temp;
-    int listsize;
-    list example;
-
-    cout << "Enter the size of the list: ";
-    cin >> listsize;
-    cout << endl;
-    for (int i = 0; i < listsize; i++)
+    list l;
+    elementtype i;
+    cout << "enter items to add to list, add 0 to stop:";
+    cin >> i;
+    while (i!= 0)
     {
-        cin >> temp;
-        l_insert(temp);
+        l.insert(i);
+        cin >> i;
     }
+    cout << "here are the items in the list.\n";
+    elementtype elem;
+    bool notempty(l.first(elem));
+    while (notempty)
+    {
+        cout << elem << endl;
+        notempty = l.next(elem);
+    }
+    return 0;
 }

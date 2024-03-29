@@ -5,7 +5,7 @@
 #include <assert.h>
 
 typedef int elementtype;
-const int maxlistsize = 1000;
+const int maxlistsize = 100;
 
 class list{
     public:
@@ -14,6 +14,8 @@ class list{
         bool first(elementtype element);
         bool next(elementtype element);
     private:
-        int content[maxlistsize];
+        elementtype listarray[maxlistsize];
+        int numberOfelements;
+        int currentPosistion;
 };
 #endif
