@@ -50,7 +50,7 @@ bool list::remove()
     if (head == NULL)
         return false;
     else{ 
-        while (head->next != NULL)
+        while (head != NULL)
         {
             link temp = head;
             head = head->next;
