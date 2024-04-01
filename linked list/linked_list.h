@@ -11,7 +11,7 @@ class list{
     public:
         list();
         void insert(const elementtype& element);
-        bool remove();
+        bool delNode();
         bool first(elementtype& element);
         bool next(elementtype& element);
     private:

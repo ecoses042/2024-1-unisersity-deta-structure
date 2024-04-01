@@ -8,7 +8,7 @@ list::list()
 }
 
 //add a new node at the end of the list
-void list::insert(const elementtype& element)
+/*void list::insert(const elementtype& element)
 {
     link new_node = new Node;
     assert(new_node);
@@ -20,6 +20,21 @@ void list::insert(const elementtype& element)
     tail = new_node;
     new_node->next = NULL;
     new_node->elem = element;
+}*/
+void list::insert(const elementtype& element)
+{
+    link new_node = new Node;
+    assert(new_node);
+    new_node->elem = element;
+    if (tail == NULL)
+    {
+        tail = new_node;
+        new_node->next = NULL;
+    }   
+    else{
+        new_node->next = head;
+    }
+    head = new_node;
 }
 
 bool list::first(elementtype& element)
@@ -45,7 +60,7 @@ bool list::next(elementtype& element)
     }
 }
 
-bool list::remove()
+bool list::delNode()
 {
     if (head == NULL)
         return false;
