@@ -6,7 +6,6 @@
 
 using namespace std;
 typedef int elementtype;
-const int maxlistsize = 100;
 
 class list{
     public:
