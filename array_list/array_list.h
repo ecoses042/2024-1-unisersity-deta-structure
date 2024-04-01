@@ -10,7 +10,7 @@ const int maxlistsize = 100;
 class list{
     public:
         list();
-        void insert(elementtype element);
+        void insert(const elementtype& element);
         bool first(elementtype element);
         bool next(elementtype element);
     private:
