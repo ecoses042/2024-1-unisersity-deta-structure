@@ -13,7 +13,7 @@ void list::insert(elementtype element)
     numberOfelements++;
 }
 
-bool list::first(elementtype element)
+bool list::first(elementtype& element)
 {
     if (numberOfelements == 0)
         return false;
@@ -24,7 +24,7 @@ bool list::first(elementtype element)
     }
 }
 
-bool list::next(elementtype element)
+bool list::next(elementtype& element)
 {
     assert(currentPosistion >= 0);
     if (currentPosistion >= numberOfelements - 1)
@@ -34,5 +34,4 @@ bool list::next(elementtype element)
         element = listarray[currentPosistion];
         return true;
     }
-    
 }
