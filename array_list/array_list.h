@@ -11,8 +11,8 @@ class list{
     public:
         list();
         void insert(elementtype element);
-        bool first(elementtype element);
-        bool next(elementtype element);
+        bool first(elementtype& element);
+        bool next(elementtype& element);
     private:
         elementtype listarray[maxlistsize];
         int numberOfelements;

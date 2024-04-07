@@ -8,7 +8,7 @@ int main()
     elementtype i;
     cout << "enter items to add to list, add 0 to stop:";
     cin >> i;
-    while (i!= 0)
+    while (i != 0)
     {
         l.insert(i);
         cin >> i;
