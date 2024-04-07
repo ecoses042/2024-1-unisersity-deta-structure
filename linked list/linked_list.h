@@ -10,8 +10,9 @@ typedef int elementtype;
 class list{
     public:
         list();
+        ~list();
         void insert(const elementtype& element);
-        bool delNode();
+
         bool first(elementtype& element);
         bool next(elementtype& element);
     private:

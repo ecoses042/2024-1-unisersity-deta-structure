@@ -26,14 +26,9 @@ void list::insert(const elementtype& element)
     link new_node = new Node;
     assert(new_node);
     new_node->elem = element;
-    if (tail == NULL)
-    {
+    if (head == NULL)
         tail = new_node;
-        new_node->next = NULL;
-    }   
-    else{
-        new_node->next = head;
-    }
+    new_node->next = head;
     head = new_node;
 }
 
@@ -60,16 +55,12 @@ bool list::next(elementtype& element)
     }
 }
 
-bool list::delNode()
+list::~list()
 {
-    if (head == NULL)
-        return false;
-    else{ 
         while (head != NULL)
         {
-            link temp = head;
+            link delNode = head;
             head = head->next;
-            delete temp;
+            delete delNode;
         }
-    }
 }

@@ -19,6 +19,5 @@ int main()
         cout << elem << endl;
         notempty = l.next(elem);
     }
-    l.delNode();
     return 0;
 }
