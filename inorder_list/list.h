@@ -14,6 +14,7 @@ class list{
         void insert(const elemtype& elem);
         bool first(elemtype& elem);
         bool next(elemtype& elem);
+        void remove(elemtype& elem);
     private:
         struct Node;
         typedef Node* link;

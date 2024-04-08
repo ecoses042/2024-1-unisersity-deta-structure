@@ -11,9 +11,12 @@ int main()
         l.insert(i);
         cin >> i;
     }
+    elemtype test = 1;
+    l.remove(test);
     cout << "here are the items in the list.\n";
     elemtype elem;
     bool notempty(l.first(elem));
+    
     while (notempty)
     {
         cout << elem << endl;

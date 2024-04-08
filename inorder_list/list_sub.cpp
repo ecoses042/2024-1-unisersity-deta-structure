@@ -62,3 +62,15 @@ bool list::next(elemtype& elem)
         return true;
     }
 }
+
+void list::remove(elemtype& elem)
+{
+    link pred, delNode;
+    for (pred = head; pred->next && pred->next->elem < elem; pred = pred->next);
+    if (pred && pred->next && pred->next->elem == elem)
+    {
+        delNode = pred->next;
+        pred->next = delNode->next;
+        delete delNode;
+    }
+}
