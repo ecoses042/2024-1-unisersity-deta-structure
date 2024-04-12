@@ -1,5 +1,5 @@
 #include <iostream>
-
+//20211530 송민수 자료구조
 using namespace std;
 void quick_sort(int a[], int first, int last);
 int partition(int a[],int lastsmall, int last);
@@ -9,6 +9,7 @@ int main()
 {
     int a[] = {4,5,6,76,87,98,3,41,234,5};
 
+    cout << "20211530 Minsoo Song"  << endl;
     cout << "this is before quick sort:";
     print_array(a, sizeof(a)/sizeof(a[0]));
     quick_sort(a, 0, sizeof(a)/sizeof(a[0])-1);

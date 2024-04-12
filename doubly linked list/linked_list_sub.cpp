@@ -14,23 +14,11 @@ void list::insert(const elementtype& element)
     assert(new_node);
     new_node->elem = element;
     new_node->next = head;
-    head = tail;
     if (head)
         head->prev = new_node;
     new_node->prev = NULL;
     head = new_node;
 }
-/*void list::insert(const elementtype& element)
-{
-    link new_node = new Node;
-    assert(new_node);
-    new_node->elem = element;
-    if (head == NULL)
-        tail = new_node;
-    new_node->next = head;
-    head = new_node;
-}*/
-
 bool list::first(elementtype& element)
 {
     if (head == NULL)

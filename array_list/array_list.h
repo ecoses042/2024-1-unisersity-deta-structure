@@ -1,5 +1,4 @@
-#ifndef  LIST_H
-#define LIST_H
+#pragma once
 
 #include <iostream>
 #include <assert.h>
@@ -11,11 +10,10 @@ class list{
     public:
         list();
         void insert(const elementtype& element);
-        bool first(elementtype element);
-        bool next(elementtype element);
+        bool first(elementtype& element);
+        bool next(elementtype& element);
     private:
         elementtype listarray[maxlistsize];
         int numberOfelements;
         int currentPosistion;
 };
-#endif

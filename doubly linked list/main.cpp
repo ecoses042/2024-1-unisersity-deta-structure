@@ -1,9 +1,12 @@
 #include "linked_list.h"
 
+//20211530 송민수 자료구조
 int main()
 {
     list l;
     elementtype i;
+
+    cout << "20211530 Minsoo Song" << endl;
     cout << "enter items to add to list, add 0 to stop:";
     cin >> i;
     while (i != 0)
@@ -21,11 +24,11 @@ int main()
     }
     cout << "here is reversed list\n";
     cout << elem << endl;
-    notempty = l.prev(elem);
-    while (notempty)
+    bool previous = l.prev(elem);
+    while (previous)
     {
         cout << elem << endl;
-        notempty = l.prev(elem);
+        previous = l.prev(elem);
     }
     return 0;
 }

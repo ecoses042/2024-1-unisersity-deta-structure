@@ -4,9 +4,9 @@
 #include <iostream>
 #include <assert.h>
 using namespace std;
-typedef int stack_type;
 const int max_stack_size = 1000;
 
+template<typename stack_type>
 class stack{
     public:
         stack();
@@ -14,9 +14,10 @@ class stack{
         void push(const stack_type& value);
         stack_type pop();
         stack_type top();
+        bool isempty();
     private:
         stack_type data[max_stack_size];
-        int top;
+        int top_index;
 };
 
 #endif

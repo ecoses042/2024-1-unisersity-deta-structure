@@ -1,5 +1,6 @@
 #include <iostream>
 
+//20211530 송민수 자료구조
 using namespace std;
 void insert_next(int array[], int size);
 int main()
@@ -7,12 +8,15 @@ int main()
     int n;
     int *array;
 
-    n = 0;
+    cout << "20211530 Minsoo Song" << endl;
+    cout << "Enter the size of the array: ";
     cin >> n;
     array = new int[n];
+    cout << "enter the element:" << endl;
     for (int i = 0; i < n; i++)
         cin >> array[i];
     insert_next(array, n);
+    cout << "list after insertion:" << endl;
     for (int i = 0; i < n; i++)
         cout << array[i] << " ";
     delete [] array;

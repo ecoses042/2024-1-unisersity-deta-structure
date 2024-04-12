@@ -6,7 +6,7 @@ list::list()
     currentPosistion = -1;
 }
 
-void list::insert(elementtype element)
+void list::insert(const elementtype& element)
 {
     assert(numberOfelements < maxlistsize);
     listarray[numberOfelements] = element;

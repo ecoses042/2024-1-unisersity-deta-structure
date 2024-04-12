@@ -1,7 +1,7 @@
 #include "Time.h"
 #include <iostream>
 using namespace std;
-
+//20211530 송민수 자료구조
 void Time::readTime(bool& errorFlag)
 {
     // The time must be formatted as <HH>:<MM><AMorPM>, where
@@ -55,7 +55,5 @@ int Time::subtractTimes(Time t)
 
 int Time::AddTime(int nTime)
 {
-    // TODO: 여기에 구현 코드 추가.
-    
     return    minutes + nTime;
 }

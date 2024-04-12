@@ -1,5 +1,4 @@
-#ifndef LINKED_LIST_H
-#define LINKED_LIST_H
+#pragma once
 
 #include <iostream>
 #include <assert.h>
@@ -29,6 +28,3 @@ class list{
         link tail;
         link current;
 };
-
-
-#endif

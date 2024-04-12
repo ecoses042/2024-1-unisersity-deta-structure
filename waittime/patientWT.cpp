@@ -1,53 +1,52 @@
 // PatientWT.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
-//
-
+//20211530 송민수 자료구조
 #include <iostream>
 #include "Time.h"
-
-using namespace std;
 
 int main()
 {
     int numberOfVisits(0), totalWaitingTime(0);
     char answer;
     bool errorFlag;
+
+    std::cout << "20211530 Minsoo Song\n";
     while (answer != 'y') 
     {
          // arrival, seenByDoctor are instances of Time class
         Time arrival, seenByDoctor;
 
-        cout << "Enter arrival time:";
+        std::cout << "Enter arrival time:";
         arrival.readTime(errorFlag);
         while (errorFlag) 
         {
-            cout << "Arrival time was incorrectly formatted; try again: ";
+            std::cout << "Arrival time was incorrectly formatted; try again: ";
             arrival.readTime(errorFlag);
         }
-        cout << "Enter time seen by doctor:";
+        std::cout << "Enter time seen by doctor:";
         seenByDoctor.readTime(errorFlag);
         while (errorFlag) 
         {
-            cout << "Seen by doctor time was incorrectly formatted; try again: ";
+            std::cout << "Seen by doctor time was incorrectly formatted; try again: ";
             seenByDoctor.readTime(errorFlag);
         }
         numberOfVisits++;
         // assume that subtracting one Time from another yields the
             // difference in minutes as an int
         totalWaitingTime += seenByDoctor.subtractTimes(arrival);
-        cout << "Done? Enter 'y' to quit, anything else to continue: ";
-        cin >> answer;
+        std::cout << "Done? Enter 'y' to quit, anything else to continue: ";
+        std::cin >> answer;
     }
     Time arrival_new;
     int nAvgTime = totalWaitingTime / numberOfVisits;
 
-    cout << "Number of visits: " << numberOfVisits << "\n";
-    cout << "Total waiting time: " << totalWaitingTime << " minutes.\n";
-    cout << "Average wait is " << nAvgTime << " minutes.\n";
-    cout << "Enter arrival time:";
+    std::cout << "Number of visits: " << numberOfVisits << "\n";
+    std::cout << "Total waiting time: " << totalWaitingTime << " minutes.\n";
+    std::cout << "Average wait is " << nAvgTime << " minutes.\n";
+    std::cout << "Enter arrival time:";
     arrival_new.readTime(errorFlag);
 
     int expected_time = arrival_new.AddTime(nAvgTime);
-    cout << "your expected time is:" << expected_time << endl;
+    std::cout << "your expected time is:" << expected_time << std::endl;
     
     return 0;
 }

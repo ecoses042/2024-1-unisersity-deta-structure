@@ -1,11 +1,12 @@
 
 #include "array_list.h"
 using namespace std;
-
+//20211530 송민수 자료구조
 int main()
 {
     list l;
     elementtype i;
+    cout << "20211530 Minsoo Song" << endl;
     cout << "enter items to add to list, add 0 to stop:";
     cin >> i;
     while (i != 0)

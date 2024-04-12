@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LIST_H
+#define LIST_H
 
 #include <iostream>
 #include <assert.h>
@@ -25,3 +26,5 @@ class list{
         link tail;
         link current;
 };
+
+#endif

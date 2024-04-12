@@ -1,13 +1,14 @@
 #include <iostream>
-
+//20211530 송민수 자료구조
 using namespace std;
 void select_next(int array[], int size);
 int main()
 {
     int n;
     int *array;
-
-    n = 0;
+    
+    cout << "20211530 Minsoo Song" << endl;
+    cout << "enter a size of the array: ";
     cin >> n;
     array = new int[n];
     for (int i = 0; i < n; i++)
@@ -22,7 +23,7 @@ int main()
 
 void select_next(int array[], int size)
 {
-    if (size == 1)
+    if (size == 0)
         return ;
     int min_index = size;
     int min  = array[size];
