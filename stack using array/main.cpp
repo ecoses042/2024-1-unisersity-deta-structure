@@ -4,9 +4,10 @@ bool isoperator(char test)
 {
     return test == '+' || test == '-' || test == '*' || test == '/';
 }
+
 int main()
 {
-    stack t;
+    stack <double>t;
     char i;
     cout << "enter items to start calculation(enter 0 to stop): ";
     cin >> i;
