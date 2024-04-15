@@ -34,3 +34,38 @@ bool stack<stack_type>::isempty()
 {
     return bool(top_index == -1);
 }
+
+template<typename stack_type>
+bool stack<stack_type>::operation(char stack_operator)
+{
+    stack_type a = pop();
+    stack_type b = pop();
+    if (a == NULL || b == NULL)
+    {
+        return false;
+    }
+    switch (stack_operator)
+    {
+        case '+':
+        {
+            push(a + b);
+            break;
+        }
+        case '-':
+        {
+            push(a - b);
+            break;
+        }
+        case '*':
+        {
+            push(a * b);
+            break;
+        }
+        case '/':
+        {
+            push(a / b);
+            break;
+        }
+    }
+    return true;
+}

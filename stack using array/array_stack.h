@@ -15,6 +15,7 @@ class stack{
         stack_type pop();
         stack_type top();
         bool isempty();
+        bool operation(char stack_operator);
     private:
         stack_type data[max_stack_size];
         int top_index;
