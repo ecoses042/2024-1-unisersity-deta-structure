@@ -1,16 +1,12 @@
 #include "array_stack.h"
 
-bool isoperator(char test)
-{
-    return test == '+' || test == '-' || test == '*' || test == '/';
-}
-
 int main()
 {
     stack <double>t;
     double op1,op2;
     char c;
-    while ((c == cin.peek()) != '\n')
+
+    while ((c = cin.peek()) != '\n')
     {
         if (isdigit(c))
         {
@@ -21,7 +17,8 @@ int main()
             cin >> c;
             op2 = t.pop();
             op1 = t.pop();
-            switch (c){
+            switch (c)
+            {
                 case '+':
                     t.push(op1 + op2);
                     break;

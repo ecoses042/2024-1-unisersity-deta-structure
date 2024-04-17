@@ -1,5 +1,4 @@
-#ifndef ARRAY_STACK_H
-#define ARRAY_STACK_H
+#pragma once
 
 #include <iostream>
 #include <assert.h>
@@ -17,6 +16,7 @@ class stack{
     private:
         stack_type data[max_stack_size];
         int top_index;
+        
 };
 template<typename stack_type>
 stack<stack_type>::stack()
@@ -26,15 +26,14 @@ stack<stack_type>::stack()
 template<typename stack_type>
 void stack<stack_type>::push(const stack_type& value)
 {
-    ++top_index;
-    if (top_index > max_stack_size)
-        return ;
+    top_index = top_index + 1;
+    assert(top_index < max_stack_size);
     data[top_index] = value;
 }
 template<typename stack_type>
 stack_type stack<stack_type>::pop()
 {
-    assert(top_index < max_stack_size && top_index > -1);
+    assert(top_index >= 0);
     int return_index = top_index;
     --top_index;
     return data[return_index];
@@ -53,4 +52,3 @@ bool stack<stack_type>::isempty()
 {
     return bool(top_index == -1);
 }
-#endif
