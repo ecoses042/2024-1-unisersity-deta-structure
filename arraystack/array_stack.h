@@ -1,4 +1,23 @@
-#include "array_stack.h"
+#ifndef ARRAY_STACK_H
+#define ARRAY_STACK_H
+
+#include <iostream>
+#include <assert.h>
+using namespace std;
+const int max_stack_size = 1000;
+
+template<typename stack_type>
+class stack{
+    public:
+        stack();
+        void push(const stack_type& value);
+        stack_type pop();
+        stack_type top();
+        bool isempty();
+    private:
+        stack_type data[max_stack_size];
+        int top_index;
+};
 template<typename stack_type>
 stack<stack_type>::stack()
 {
@@ -34,38 +53,4 @@ bool stack<stack_type>::isempty()
 {
     return bool(top_index == -1);
 }
-
-template<typename stack_type>
-bool stack<stack_type>::operation(char stack_operator)
-{
-    stack_type a = pop();
-    stack_type b = pop();
-    if (a == NULL || b == NULL)
-    {
-        return false;
-    }
-    switch (stack_operator)
-    {
-        case '+':
-        {
-            push(a + b);
-            break;
-        }
-        case '-':
-        {
-            push(a - b);
-            break;
-        }
-        case '*':
-        {
-            push(a * b);
-            break;
-        }
-        case '/':
-        {
-            push(a / b);
-            break;
-        }
-    }
-    return true;
-}
+#endif
