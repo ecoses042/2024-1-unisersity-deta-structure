@@ -1,5 +1,4 @@
-#ifndef ARRAY_STACK_H
-#define ARRAY_STACK_H
+#pragma once
 
 #include <iostream>
 #include <assert.h>
@@ -19,5 +18,3 @@ class stack{
         stack_type data[max_stack_size];
         int top_index;
 };
-
-#endif

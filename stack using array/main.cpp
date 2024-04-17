@@ -2,8 +2,9 @@
 
 int main()
 {
-    stack t;
-    stack_type i;
+    stack<int> t;
+    //i declaration
+
     cout << "enter items to add to stack, add 0 to stop";
     cin >> i;
     while (i!= 0)
