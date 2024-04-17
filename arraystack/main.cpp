@@ -2,7 +2,7 @@
 
 int main()
 {
-    stack <double>t;
+    stack<double>t;
     double op1,op2;
     char c;
 
@@ -13,7 +13,7 @@ int main()
             cin >> op1;
             t.push(op1);
         }
-        else{
+        else      {
             cin >> c;
             op2 = t.pop();
             op1 = t.pop();
@@ -29,15 +29,17 @@ int main()
                     t.push(op1 * op2);
                     break;
                 case '/':
-                    if (op2 == 0)
-                        cerr << "cannot divide by 0\n";
+                    if (op2 == 0){
+                        cout << "cannot divide by 0\n";
+                        break;
+                    }
                     t.push(op1 / op2);
                     break;
                 default:
                     cout << "error" << endl;
                     break;
             }
-            while (c = cin.peek() == ' ')
+            while ((c = cin.peek()) == ' ')
                 cin.ignore(1,' ');
         }
     }

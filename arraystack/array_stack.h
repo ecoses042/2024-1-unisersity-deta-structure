@@ -33,9 +33,10 @@ void stack<stack_type>::push(const stack_type& value)
 template<typename stack_type>
 stack_type stack<stack_type>::pop()
 {
+    cout << top_index << endl;
     assert(top_index >= 0);
     int return_index = top_index;
-    --top_index;
+    top_index--;
     return data[return_index];
 }
 template<typename stack_type>
