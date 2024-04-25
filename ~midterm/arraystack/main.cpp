@@ -39,8 +39,6 @@ int main()
                     cout << "error" << endl;
                     break;
             }
-            while ((c = cin.peek()) == ' ')
-                cin.ignore(1,' ');
         }
     }
     cout << t.pop();
