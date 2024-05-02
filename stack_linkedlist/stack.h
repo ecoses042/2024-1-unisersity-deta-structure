@@ -1,32 +1,29 @@
-#ifndef LINKED_LIST_H
-#define LINKED_LIST_H
+#pragma once
 
 #include <iostream>
 #include <assert.h>
-
 using namespace std;
-typedef int elementtype;
 
-class list{
+template<typename stack_type>
+class stack{
     public:
-        list();
-        ~list();
-        void insert(const elementtype& element);
-        bool first(elementtype& element);
-        bool next(elementtype& element);
+        stack();
+        ~stack();
+        void push(const stack_type& value);
+        stack_type pop();
+        stack_type top();
+        bool isempty();
+        bool operation(char stack_operator);
     private:
         struct Node;
         typedef Node *link;
         struct Node{
-            elementtype elem;
+            stack_type element;
             link next;
         };
         link head;
         link tail;
-        link current;
 };
-
-#endif
 
 template<typename stack_type>
 stack<stack_type>::stack()
@@ -44,12 +41,11 @@ stack<stack_type>::~stack()
 template<typename stack_type>
 void stack<stack_type>::push(const stack_type& value)
 {
-    link addednode = new link;
+    link addednode = new Node;
     assert(addednode);
-    addednode->data = value;
+    addednode->element = value;
     if (head == NULL)
     {
-        head = addednode;
         tail = addednode;
     }
     addednode->next = head;
@@ -59,8 +55,8 @@ void stack<stack_type>::push(const stack_type& value)
 template<typename stack_type>
 stack_type stack<stack_type>::pop()
 {
+    assert(head);
     link removenode(head);
-    assert(removenode);
     head = removenode->next;
     return (removenode->element);
 }
