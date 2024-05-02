@@ -11,9 +11,10 @@ int main()
     cin >> b;
     q.enqueue(a);
     q.enqueue(b);
-    while (q.isempty())
+    while (!q.isempty())
     {
-        cout << q.dequeue();
+        char temp = q.dequeue();
+        cout << temp << endl;
     }
     return 0;
 }

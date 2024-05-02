@@ -3,7 +3,45 @@
 #include <iostream>
 #include <assert.h>
 
-template <typename queueelemtype>
+using namespace std;
+
+class CMyClass{
+    public:
+        CMyClass();
+        CMyClass(int n);
+        ~CMyClass();
+        int get_m_nID();
+        friend ostream& operator<<(ostream& os, const CMyClass& first);
+        //연산사 오버로딩 사용하여서 m_nID를 비교할 수 있도록 코딩
+    private:
+        int m_nID;
+};
+
+CMyClass::CMyClass()
+{
+    m_nID = 0;
+}
+CMyClass::CMyClass(int n)
+{
+    m_nID = n;
+}
+
+CMyClass::~CMyClass()
+{
+
+}
+
+int CMyClass::get_m_nID()
+{
+    return m_nID;
+}
+
+ostream& operator<<(ostream& os, const CMyClass& first)
+{
+    os << first.m_nID;
+    return os;
+}
+template <class queueelemtype>
 class queue{
     public:
         queue();
@@ -23,14 +61,14 @@ class queue{
         nodeptr r;
 };
 
-template <typename queueelemtype>
+template <class queueelemtype>
 queue<queueelemtype>::queue()
 {
     nodeptr f = NULL;
     nodeptr r = NULL;
 }
 
-template <typename queueelemtype>
+template <class queueelemtype>
 queue<queueelemtype>::~queue()
 {
     nodeptr delnode(f);
@@ -42,7 +80,7 @@ queue<queueelemtype>::~queue()
     }
 }
 
-template <typename queueelemtype>
+template <class queueelemtype>
 void queue<queueelemtype>::enqueue(const queueelemtype& elem)
 {
     nodeptr newnode(new node);
@@ -57,7 +95,7 @@ void queue<queueelemtype>::enqueue(const queueelemtype& elem)
     r = newnode;
 }
 
-template <typename queueelemtype>
+template <class queueelemtype>
 queueelemtype queue<queueelemtype>::dequeue()
 {
     assert(f);
@@ -70,14 +108,14 @@ queueelemtype queue<queueelemtype>::dequeue()
     return front;
 }
 
-template <typename queueelemtype>
+template <class queueelemtype>
 queueelemtype queue<queueelemtype>::front()
 {
     assert(f);
     return f->elem;
 }
 
-template <typename queueelemtype>
+template <class queueelemtype>
 bool queue<queueelemtype>::isEmpty()
 {
     return bool(f == 0);
