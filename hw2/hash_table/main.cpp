@@ -10,5 +10,11 @@ int main()
     t.insert(5, 5);
     t.insert(6, 6);
     t.insert(7, 7);
+    t.insert(11,11);
+    t.dump();
+    cout << "this is after deletion" << endl;
+    t.deletekay(11);
+    t.deletekay(2);
+    t.insert(22,22);
     t.dump();
 }

@@ -5,6 +5,35 @@
 using namespace std;
 const int table_max_size = 11;
 
+class Cphone
+{
+    public:
+        Cphone();
+        Cphone(string quota_name, int quota_birthday);
+        print();
+        friend ostream& operator<<(ostream& os, const Cphone& first);
+    private:
+        string name;
+        int birthday;
+};
+
+Cphone::Cphone()
+{
+    name = "";
+    birthday = 0;
+}
+
+Cphone::Cphone(string quota_name, int quota_birthday)
+{
+    name = quota_name;
+    birthday = quota_birthday;
+}
+
+Cphone::print()
+{
+    cout << name << " " << birthday << endl;
+}
+
 template <class tablekeytype, class tabledatatype>
 class table{
     public:
@@ -117,9 +146,9 @@ void table<tablekeytype,tabledatatype>::deletekay(const tablekeytype& key)
 template <class tablekeytype, class tabledatatype>
 void table<tablekeytype, tabledatatype>::dump()
 {
-    for (int i = 0; i < number_of_element; i++)
+    for (int i = 0; i < table_max_size; i++)
     {
-        cout << i << endl;
+        cout << i  << ": ";
         switch(t[i].status)
         {
             case inuse:
