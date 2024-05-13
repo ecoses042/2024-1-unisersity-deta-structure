@@ -42,7 +42,7 @@ void table<tablekeytype, tablevaluetype>::insert(const tablekeytype key, const t
     link sp(T[pos]);
     if (!search(sp,key))
     {
-        link addednode = new link;
+        link addednode = new slot;
         assert(addednode);
         addednode->key = key;
         addednode->value = value;
@@ -130,10 +130,11 @@ int table<tablekeytype, tablevaluetype>::hash(const tablekeytype& key){
 }
 
 
-void dump(){
+template <class tablekeytype, class tablevaluetype>
+void table<tablekeytype, tablevaluetype>::dump(){
     for (int i = 0; i < max_table_size; i++)
     {
-        slot sp(T[i]);
+        link sp(T[i]);
         for (;sp;sp = sp->next)
         {
             cout << "node " << i << "\t";
