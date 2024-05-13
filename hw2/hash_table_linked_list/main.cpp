@@ -12,10 +12,18 @@ int strtoint(string strName)
 
 int main()
 {
-    table <int, int> t1;
-    t1.insert(strtoint("a"), 1);
-    t1.insert(strtoint("b"),2);
-    t1.insert(strtoint("c"),3);
-    
+    table <int, Cphone> t1;
+    t1.insert(1,Cphone("a",1));
+    t1.insert(2,Cphone("b",2));
+    t1.insert(3,Cphone("c",3));
     t1.dump();
+
+    table <int, Cphone> t2;
+    t2.insert(strtoint("a"), Cphone("a",1));
+    t2.insert(strtoint("b"), Cphone("b",2));
+    t2.insert(strtoint("c"), Cphone("c",3));
+    Cphone look;
+    t2.lookup(strtoint("a"), look);
+    cout << look << endl;
+    cout << "20211530 Minsoo Song"  << endl;
 }

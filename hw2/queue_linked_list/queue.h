@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <assert.h>
-
+//20211530 송민수
 using namespace std;
 
 class CMyClass{
@@ -64,8 +64,8 @@ class queue{
 template <class queueelemtype>
 queue<queueelemtype>::queue()
 {
-    nodeptr f = NULL;
-    nodeptr r = NULL;
+    f = NULL;
+     r = NULL;
 }
 
 template <class queueelemtype>

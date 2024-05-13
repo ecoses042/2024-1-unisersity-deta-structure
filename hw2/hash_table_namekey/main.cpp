@@ -13,23 +13,30 @@ int strtoint(string strName)
 
 int main()
 {
-    table <int, Cphone> t;
-    t.insert(strtoint("minsoo"), Cphone("Minsoo1",010621));
-    t.insert(2, Cphone("Minsoo2",010622));
-    t.insert(3, Cphone("Minsoo3",010623));
-    t.insert(4, Cphone("Minsoo4",010624));
-    t.insert(5, Cphone("Minsoo5",010625));
-    t.insert(6, Cphone("Minsoo6",010626));
-    t.insert(7, Cphone("Minsoo7",010627));
-    t.insert(11,Cphone("Minsoo11",10628));
-    t.dump();
-    cout << "this is after deletion" << endl;
-    t.deletekay(11);
-    t.deletekay(2);
-    t.insert(22,Cphone("Minsoo",22));
-    t.dump();
-    cout << "search minsoo" << endl;
-    Cphone C;
-    t.lookup(strtoint("minsoo"),C);
-    C.print();
+    table <int,int> mytable1;
+    for (int i = 1; i <= 7; i++)
+    {
+        mytable1.insert(i,i);
+    }
+    mytable1.dump();
+    mytable1.deletekey(1);
+    mytable1.deletekey(2);
+    mytable1.insert(1,1);
+    mytable1.dump();
+
+    table <int, Cphone> mytable2;
+    mytable2.insert(1,Cphone("Minsoo1",1));
+    mytable2.insert(2, Cphone("Minsoo2",2));
+    mytable2.insert(3, Cphone("Minsoo3",3));
+    mytable2.dump();
+    
+    table <int, Cphone> mytable3;
+    mytable3.insert(strtoint("a"), Cphone("apple",1));
+    mytable3.insert(strtoint("b"), Cphone("banana",2));
+    mytable3.insert(strtoint("c"), Cphone("cherry",3));
+    mytable3.insert(strtoint("d"), Cphone("durian",4));
+    Cphone find;
+    mytable3.lookup(strtoint("a"),find);
+    cout << find << endl;
+    cout << "20211530 Minsoo Song" << endl;
 }
