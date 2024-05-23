@@ -11,17 +11,18 @@ class BinaryTree{
         BinaryTree();
         bool isempty();
         btelementtype getData();
-        virtual void insert (const  btelementtype& element);
+        void insert (const  btelementtype& element);
         BinaryTree* left();
         BinaryTree* right();
         void makeleft(BinaryTree* T);
         void makeright(BinaryTree* T);
     protected:
-    private:
         bool nulltree;
         btelementtype data;
         BinaryTree* lefttree;
         BinaryTree* righttree;
+    private:
+        
 };
 
 template <class btelementtype>
