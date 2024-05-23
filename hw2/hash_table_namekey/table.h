@@ -4,7 +4,7 @@
 #include <assert.h>
 using namespace std;
 const int table_max_size = 11;
-
+//20211530 송민수
 class Cphone
 {
     public:
@@ -33,6 +33,11 @@ Cphone::print()
 {
     cout << name << " " << birthday << endl;
 }
+ostream& operator<<(ostream& os, const Cphone& first)
+{
+    os << first.name << ":" << first.birthday;
+    return os;
+}
 
 template <class tablekeytype, class tabledatatype>
 class table{
@@ -40,7 +45,7 @@ class table{
         table();
         bool lookup(const tablekeytype& key, tabledatatype& value);
         void insert(const tablekeytype& key, const tabledatatype& value);
-        void deletekay(const tablekeytype& key);
+        void deletekey(const tablekeytype& key);
         void dump();
     private:
         //empty for 0, deleted for 1 inuse for 2
@@ -133,7 +138,7 @@ void table<tablekeytype, tabledatatype>::insert(const tablekeytype& key, const t
 }
 
 template <class tablekeytype, class tabledatatype>
-void table<tablekeytype,tabledatatype>::deletekay(const tablekeytype& key)
+void table<tablekeytype,tabledatatype>::deletekey(const tablekeytype& key)
 {
     int pos(hash(key));
     if (search(pos, key))

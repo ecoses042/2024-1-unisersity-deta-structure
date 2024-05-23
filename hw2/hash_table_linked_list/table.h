@@ -4,6 +4,35 @@
 #include<assert.h>
 using namespace std;
 const int max_table_size = 11;
+//20211530 송민수
+class Cphone
+{
+    public:
+        Cphone();
+        Cphone(string quota_name, int quota_birthday);
+        friend ostream& operator<<(ostream& os, const Cphone& first);
+    private:
+        string name;
+        int birthday;
+};
+
+Cphone::Cphone()
+{
+    name = "";
+    birthday = 0;
+}
+
+Cphone::Cphone(string quota_name, int quota_birthday)
+{
+    name = quota_name;
+    birthday = quota_birthday;
+}
+
+ostream& operator<<(ostream& os, const Cphone& first)
+{
+    os << first.name << ":" << first.birthday;
+    return os;
+}
 
 template <class tablekeytype, class tablevaluetype>
 class table{
@@ -24,7 +53,6 @@ class table{
         };
         link T[max_table_size];
         bool search(link & slotpointer, const tablekeytype & target);
-
 };
 
 template <class tablekeytype, class tablevaluetype>
@@ -130,7 +158,8 @@ int table<tablekeytype, tablevaluetype>::hash(const tablekeytype& key){
 }
 
 
-template <class tablekeytype, class tablevaluetype>
+template<class tablekeytype, class tablevaluetype>
+
 void table<tablekeytype, tablevaluetype>::dump(){
     for (int i = 0; i < max_table_size; i++)
     {
