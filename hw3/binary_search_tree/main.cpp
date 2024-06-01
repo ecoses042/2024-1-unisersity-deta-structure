@@ -12,8 +12,8 @@ int main()
     b->insert(14);
     b->insert(20);
     b->insert(28);
-    b->insert(11);
     b->insert(31);
+    b->insert(11);
     b->insert(37);
     b->insert(12);
     // is 11 in the tree?

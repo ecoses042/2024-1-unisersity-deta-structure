@@ -7,7 +7,7 @@ class bst: public BinaryTree <btelementtype>{
     public:
         bst();
         virtual void insert(const btelementtype& d);
-        virtual BinaryTree<btelementtype> * retrieve(const btelementtype& d);
+        BinaryTree<btelementtype>* retrieve(const btelementtype& d);
     private:
         using BinaryTree<btelementtype>::nulltree;
         using BinaryTree<btelementtype>::data;
@@ -16,7 +16,8 @@ class bst: public BinaryTree <btelementtype>{
 };
 
 template <class btelementtype>
-bst<btelementtype>::bst():BinaryTree<btelementtype>(){
+bst<btelementtype>::
+bst():BinaryTree<btelementtype>(){
     nulltree = true;
     lefttree = 0;
     righttree = 0;
@@ -24,7 +25,8 @@ bst<btelementtype>::bst():BinaryTree<btelementtype>(){
 
 template <class btelementtype>
 void 
-bst<btelementtype>::insert(const btelementtype& d){
+bst<btelementtype>::
+insert(const btelementtype& d){
     if (nulltree)
     {
         nulltree = false;
@@ -41,8 +43,9 @@ bst<btelementtype>::insert(const btelementtype& d){
 }
 
 template <class btelementtype>
-BinaryTree<btelementtype> * 
-bst<btelementtype>::retrieve(const btelementtype& d){
+BinaryTree<btelementtype>* 
+bst<btelementtype>::
+retrieve(const btelementtype& d){
     if (nulltree || d == data)
         return this;
     else if (d < data)

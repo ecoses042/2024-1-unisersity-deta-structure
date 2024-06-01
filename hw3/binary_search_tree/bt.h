@@ -9,7 +9,7 @@ template <class btelementtype>
 class BinaryTree{
     public:
         BinaryTree();
-        bool isempty();
+        bool isempty()const;
         btelementtype getData();
         void insert (const  btelementtype& element);
         BinaryTree* left();
@@ -33,7 +33,7 @@ BinaryTree<btelementtype>::BinaryTree(){
 }
 
 template <class btelementtype>
-bool BinaryTree<btelementtype>::isempty(){
+bool BinaryTree<btelementtype>::isempty() const{
     return nulltree;
 }
 
