@@ -1,9 +1,5 @@
 #pragma once
 
-#include <iostream>
-#include <assert.h>
-using namespace std;
-
 template<typename stack_type>
 class stack{
     public:
@@ -12,7 +8,7 @@ class stack{
         void push(const stack_type& value);
         stack_type pop();
         stack_type top();
-        bool isempty();
+        bool isEmpty();
         bool operation(char stack_operator);
     private:
         struct Node;
@@ -35,7 +31,7 @@ stack<stack_type>::stack()
 template<typename stack_type>
 stack<stack_type>::~stack()
 {
-    while(isempty())
+    while(!isEmpty())
         pop();
 }
 template<typename stack_type>
@@ -69,8 +65,8 @@ stack_type stack<stack_type>::top()
 }
 
 template<typename stack_type>
-bool stack<stack_type>::isempty()
+bool stack<stack_type>::isEmpty()
 {
-    return (bool(head));
+    return (!bool(head));
 }
 
