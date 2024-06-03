@@ -22,7 +22,6 @@ class table{
         int search(const tablekeytype& key);
 };
 
-
 template <class tablekeytype, class tabledatatype>
 table<tablekeytype, tabledatatype>::table(){
     number_of_element = 0;
@@ -50,7 +49,6 @@ void table<tablekeytype, tabledatatype>::insert(const tablekeytype& key, const t
     t[index].key = key;
     t[index].data = value;
 }
-
 
 template <class tablekeytype, class tabledatatype>
 void table<tablekeytype, tabledatatype>::deletekay(tablekeytype key)

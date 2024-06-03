@@ -16,6 +16,7 @@ int main()
     b->insert(11);
     b->insert(37);
     b->insert(12);
+    b->insert(13);
     // is 11 in the tree?
     intBSTPtr get11((bst<int>*)b->retrieve(11));
     if (get11->isempty())
