@@ -6,6 +6,7 @@
 
 int main()
 {
+    cout << "20211530 Minsoo Song" << endl;
     const char *infilename = "graph.txt";
     ifstream ifs(infilename);
     assert(ifs);
