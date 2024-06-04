@@ -5,7 +5,7 @@
 class AMgraph : public graph
 {
     public:
-        AMgraph(int size) : graph(size);
+        AMgraph(int size) : graph(size){}
         virtual bool edgemember(int fromv, int tov);
     protected:
         int **am;
@@ -13,7 +13,7 @@ class AMgraph : public graph
 };
 
 //stating graph matrix by given size and initialize it
-AMgraph::AMgraph(int size) : graph(size)
+AMgraph(int size) : graph(size)
 {
     am = new int*[size];
     assert(am);
