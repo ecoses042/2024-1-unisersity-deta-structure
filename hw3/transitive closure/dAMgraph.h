@@ -2,7 +2,7 @@
 
 #include "AMgraph.h"
 
-class dAMgraph : public dAMgraph
+class dAMgraph : public AMgraph
 {
     public:
         dAMgraph(int size, int initialvalue = 0) : AMgraph(size){}

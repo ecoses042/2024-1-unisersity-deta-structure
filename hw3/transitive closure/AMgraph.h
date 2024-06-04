@@ -5,7 +5,7 @@
 class AMgraph : public graph
 {
     public:
-        AMgraph(int size) : graph(size);
+        AMgraph(int size);
         virtual bool edgemember(int fromv, int tov);
     protected:
         int **am;
@@ -29,7 +29,7 @@ AMgraph::AMgraph(int size) : graph(size)
 }
 
 //finding if two vertices are connected
-AMgraph::edgemember(int fromv, int tov)
+bool AMgraph::edgemember(int fromv, int tov)
 {
     assert(fromv < n && tov < n && fromv >= 0 && tov >= 0);
     return bool(am[fromv][tov] != 0);
